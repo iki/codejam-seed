@@ -15,11 +15,12 @@ Sample usage
 1. Choose contest at https://code.google.com/codejam/contests.html,
    e.g. 2010 Qualification https://code.google.com/codejam/contest/433101/dashboard
 
-2. Copy it's ID from URL: 433101.
+2. Copy contest ID from URL: `433101`
 
 3. Compete:
 
-  ```
+  ```shell
+
   export PATH=$PWD/.bin;$PATH
 
   cd 2010-qualification
