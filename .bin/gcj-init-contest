@@ -9,7 +9,7 @@ if [ ! -f "./config/user_config.py" ]; then
   fi
 
 if [ ! -f "./config/current_config.py" -a "$name" != gcj_init_contest ]; then
-  echo Please run gcj-init-contest contest_id >&2
+  echo Please run gcj-init-contest before $name. >&2
   exit 2
   fi
 

@@ -13,7 +13,7 @@ if not exist .\config\user_config.py (
   )
 
 if not exist .\config\current_config.py if not "%name%"=="gcj_init_contest" (
-  echo Please run gcj-init-contest contest_id >&2
+  echo Please run gcj-init-contest before %name%. >&2
   exit /b 2
   )
 
