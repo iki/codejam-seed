@@ -4,8 +4,8 @@ name="$(echo ${0##/*} | sed 's/-/_/g')"
 base="${0%/*}"; [ "$base" = "$0" -o "$base" = '.' ] && base="$PWD"; [ "${base#/}" = "$base" ] && base="$PWD/${base#./}";
 
 if [ ! -f "./config/user_config.py" ]; then
-  echo === cp -auxv .bin/gcj/config . >&2
-  cp -auxv $base/gcj/config . || exit $?
+  echo === cp -av "$base/gcj/config" . >&2
+  cp -av "$base/gcj/config" . || exit $?
   fi
 
 if [ ! -f "./config/current_config.py" -a "$name" != gcj_init_contest ]; then
@@ -13,5 +13,5 @@ if [ ! -f "./config/current_config.py" -a "$name" != gcj_init_contest ]; then
   exit 2
   fi
 
-echo === python .bin/gcj/$name.py --base_dir . "$@" >&2
+echo === python "$base/gcj/$name.py" --base_dir . "$@" >&2
 python "$base/gcj/$name.py" --base_dir . "$@"
