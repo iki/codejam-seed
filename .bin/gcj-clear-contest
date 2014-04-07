@@ -1,7 +1,8 @@
 #!/bin/bash
 
 name="$(echo ${0##*/} | sed 's/-/_/g')"
-base="${0%/*}"; [ "$base" = "$0" ] && base="$PWD"
+base="$(dirname "$0")" # "$(cd "$(dirname "$0")"; pwd -P)"
+
 
 if [ ! -f "./config/user_config.py" ]; then
   echo === cp -av "$base/gcj/config" . >&2
