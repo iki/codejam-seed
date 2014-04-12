@@ -5,7 +5,7 @@
 @for %%d in (%dst%) do copy %src%.bat %%d.bat
 
 @set src=gcj-a
-@set dst=gcj-b gcj-c
+@set dst=gcj-b gcj-c gcj-d
 
 @for %%d in (%dst%) do copy %src%.bat %%d.bat
 
