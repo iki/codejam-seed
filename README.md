@@ -8,6 +8,7 @@ Getting started
 
 1. Edit your google account address in `.bin/gcj/config/user_config.py`
 
+2. Edit your source name format there for submitting sources with solutions.
 
 Sample usage
 ------------
