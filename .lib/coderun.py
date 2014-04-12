@@ -266,7 +266,7 @@ def main(solve, parse=expressions, format=str, log='', precompile=None,
     precompile_options = 'no partial full'.split()
     optparser.add_option("-c", "--precompile",
         action="store", choices=precompile_options + map(str, range(len(precompile_options))),
-        help="precompile using psyco [0=no|1=partial|2=full]")
+        help="precompile using psyco on python < 2.7 [0=no|1=partial|2=full]")
 
     optparser.add_option("-o", "--stdout",
         action="store_true", default=False,
@@ -343,6 +343,11 @@ def main(solve, parse=expressions, format=str, log='', precompile=None,
 
                 else:
                     import os, os.path
+
+                    # Log only errors to console. Detailed log will be in output.log.
+                    if log.handlers:
+                        log.handlers[0].level = logging.ERROR
+
                     for fin in fins:
                         fl = None
                         try:
