@@ -1,5 +1,5 @@
-set src=gcj-init-contest
-set dst=gcj-clear-contest gcj-download-input gcj-get-status gcj-renew-login gcj-submit-solution
+set src=gcj_init_contest
+set dst=gcj_clear_contest gcj_download_input gcj_get_status gcj_renew_login gcj_submit_solution
 
 for %%d in (%dst%) do copy %src% %%d
 for %%d in (%dst%) do copy %src%.bat %%d.bat
