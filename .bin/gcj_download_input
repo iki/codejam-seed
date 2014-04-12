@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-name="$(echo ${0##*/} | sed 's/-/_/g')"
+name="${0##*/}"; while [ "${name#*-}" != "$name" ]; do name="${name%%-*}_${name#*-}"; done
 base="$(dirname "$0")" # "$(cd "$(dirname "$0")"; pwd -P)"
 
 
