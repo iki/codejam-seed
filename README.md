@@ -25,14 +25,18 @@ Sample usage
 
   cd 2010-qualification
 
-  gcj-init-contest 433101
+  gcj-init 433101
+    # gcj_init_contest
 
   vim a.py # hack your code
 
-  gcj-download-input a small 0
+  gcj-get a small 0
+    # gcj_download_input
 
-  a.py A-small-0.in  # run your code
+  a.py -dt A-small-0.in
+    # run your code, generate A-small-0.out
 
-  gcj-submit-solution a small 0
+  gcj-submit a small 0
+    # gcj_submit_solution
 
   ```
