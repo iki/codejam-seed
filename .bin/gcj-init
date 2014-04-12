@@ -1,0 +1,5 @@
+#!/bin/sh
+
+base="${0%/*}"; [ "$base" != "$0" ] || base="$PWD"
+
+"$base/gcj_init_contest" "$@"
