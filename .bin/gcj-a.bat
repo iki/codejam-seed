@@ -40,21 +40,21 @@ exit /b %errorlevel%
 ::| test {input-name}
 ::|   Solves input if it exist, and output does not.
 ::|
-::|   If corrent solution input-name.good exists,
+::|   If corrent solution input-name.ok exists,
 ::|   then output is compared.
 ::|
 setlocal 
 if "%~1"=="" exit /b 2
 set test=%name%-%~1
 
-if not exist "%test%.in" echo --- %1 >&2 && exit /b 1
+if not exist "%test%.in" exit /b 1
 if exist "%test%.out" echo +++ %1 >&2 && exit /b 3
 
 call :run %opts% "%test%.in"
 
-if exist "%test%.out" if exist "%test%.good" (
-  echo === diff -w %test%.out %test%.good >&2
-  diff -w "%test%.out" "%test%.good"
+if exist "%test%.out" if exist "%test%.ok" (
+  echo === diff -w %test%.out %test%.ok >&2
+  diff -w "%test%.out" "%test%.ok"
 )
 
 endlocal && set test=%test%
